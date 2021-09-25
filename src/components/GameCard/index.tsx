@@ -39,6 +39,7 @@ const GameCard = ({
         {ribbon}
       </Ribbon>
     )}
+
     <S.ImageBox>
       <img src={img} alt={title} />
     </S.ImageBox>

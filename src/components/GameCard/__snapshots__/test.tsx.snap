@@ -69,6 +69,10 @@ exports[`<GameCard /> should render correctly 1`] = `
   animation: placeholderShimmer 1s linear infinite forwards;
 }
 
+.c1 > img {
+  width: 100%;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
