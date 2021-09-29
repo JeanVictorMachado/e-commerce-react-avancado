@@ -1,3 +1,4 @@
+import 'match-media-mock'
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 
@@ -32,6 +33,7 @@ describe('<Home />', () => {
 
   it('should render sections', () => {
     renderWithTheme(<Home {...props} />)
+
     expect(screen.getByRole('heading', { name: /news/i })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: /most popular/i }))
     expect(
@@ -41,8 +43,9 @@ describe('<Home />', () => {
 
   it('should render section elements', () => {
     renderWithTheme(<Home {...props} />)
+
     expect(screen.getAllByText(/defy death 1/i)).toHaveLength(1)
     expect(screen.getAllByText(/population zero/i)).toHaveLength(20)
-    expect(screen.getAllByText(/read dead is back!/i)).toHaveLength(3)
+    expect(screen.getAllByText(/Read Dead it’s back/i)).toHaveLength(3)
   })
 })
