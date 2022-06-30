@@ -10,8 +10,8 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
     <ThemeProvider theme={theme}>
       <Head>
         <title>Won Games</title>
-        <link rel="shortcut icon" href="/img/icon-512.png" />
-        <link rel="apple-touch-icon" href="/img/icon-512.png" />
+        <link rel="shortcut icon" href="/img/favicon.png" />
+        <link rel="apple-touch-icon" href="/img/favicon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta
           name="description"
