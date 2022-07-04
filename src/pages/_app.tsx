@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
@@ -6,6 +7,8 @@ import GlobalStyles from 'styles/global'
 import theme from 'styles/theme'
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
+  const AnyComponent = Component as any
+
   return (
     <ThemeProvider theme={theme}>
       <Head>
@@ -19,7 +22,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
         />
       </Head>
       <GlobalStyles />
-      <Component {...pageProps} />
+      <AnyComponent {...pageProps} />
     </ThemeProvider>
   )
 }

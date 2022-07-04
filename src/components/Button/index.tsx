@@ -1,4 +1,5 @@
 import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react'
+
 import * as S from './styles'
 
 type ButtonTypes =
@@ -18,15 +19,13 @@ const Button = ({
   icon,
   size = 'medium',
   fullWidth = false,
-  minimal = false,
-  ...props
+  minimal = false
 }: ButtonProps) => (
   <S.Wrapper
     size={size}
     fullWidth={fullWidth}
     hasIcon={!!icon}
     minimal={minimal}
-    {...props}
   >
     {icon}
     {!!children && <span>{children}</span>}

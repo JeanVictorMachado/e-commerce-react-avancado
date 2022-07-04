@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Document, {
   Html,
   Head,
@@ -5,6 +6,7 @@ import Document, {
   NextScript,
   DocumentContext
 } from 'next/document'
+import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -15,7 +17,7 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) =>
+          enhanceApp: (App: any) => (props) =>
             sheet.collectStyles(<App {...props} />)
         })
 

@@ -5,7 +5,8 @@ import {
   GlobalStyleComponent
 } from 'styled-components'
 
-type GlobalStylesProps = {
+interface GlobalStylesProps {
+  theme?: DefaultTheme
   removeBg?: boolean
 }
 
