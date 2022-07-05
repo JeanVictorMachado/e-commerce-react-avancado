@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
+import Link from 'next/link'
 
 import { ShoppingCart as ShoppingCartIcon } from '@styled-icons/material-outlined/ShoppingCart'
 import { Search as SearchIcon } from '@styled-icons/material-outlined/Search'
@@ -16,6 +17,8 @@ export type MenuPros = {
 }
 
 const Menu = ({ username }: MenuPros) => {
+  const ref = useRef(null)
+
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -48,7 +51,11 @@ const Menu = ({ username }: MenuPros) => {
 
         {!username && (
           <MediaMatch greaterThan="medium">
-            <Button size="small">Sign in</Button>
+            <Link href="/sign-in" passHref>
+              <Button as="a" ref={ref}>
+                Sign in
+              </Button>
+            </Link>
           </MediaMatch>
         )}
       </S.MenuGroup>

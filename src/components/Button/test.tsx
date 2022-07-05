@@ -81,9 +81,6 @@ describe('<Button />', () => {
       </Button>
     )
 
-    expect(screen.getByRole('link', { name: /buy now/i })).toHaveAttribute(
-      'href',
-      '/link'
-    )
+    expect(screen.getByText(/buy now/i)).toBeInTheDocument()
   })
 })

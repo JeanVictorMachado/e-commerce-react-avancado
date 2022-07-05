@@ -70,13 +70,7 @@ exports[`<Banner /> shoud render the heading 1`] = `
 }
 
 @media (max-width:1170px) {
-  .c0 .sc-gsTCUz {
-    right: 0;
-  }
 
-  .c0 .sc-gsTCUz::before {
-    display: none;
-  }
 }
 
 @media (min-width:768px) {
@@ -141,14 +135,13 @@ exports[`<Banner /> shoud render the heading 1`] = `
          season
       </p>
     </h3>
-    <a
+    <button
       class="c5"
-      href="/games/defy-death"
     >
       <span>
         Buy now
       </span>
-    </a>
+    </button>
   </div>
 </main>
 `;

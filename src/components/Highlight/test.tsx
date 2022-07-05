@@ -25,7 +25,7 @@ describe('<Highlight />', () => {
       screen.getByRole('heading', { name: /heading 2/i })
     ).toBeInTheDocument()
 
-    expect(screen.getByRole('link', { name: /buy now/i })).toBeInTheDocument()
+    expect(screen.getByText(/buy now/i)).toBeInTheDocument()
   })
 
   it('should render backgroud image', () => {
