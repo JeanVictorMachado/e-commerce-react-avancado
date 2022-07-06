@@ -1,13 +1,11 @@
-import { Fragment } from 'react'
-
 import { BannerProps } from 'components/Banner'
-import { Container } from 'components/Container'
 import { GameCardProps } from 'components/GameCard'
-import Showcase from 'components/Showcase'
 import { HighlightProps } from 'components/Highlight'
-import Footer from 'components/Footer'
-import Menu from 'components/Menu'
+import { Container } from 'components/Container'
+
+import Showcase from 'components/Showcase'
 import BannerSlider from 'components/BannerSlider'
+import Base from 'components/Base'
 
 import * as S from './styles'
 
@@ -34,9 +32,8 @@ const Home = ({
   upcommingHighligth,
   upcommingMoreGames
 }: HomeScreenProps) => (
-  <Fragment>
+  <Base>
     <Container>
-      <Menu />
       <S.SectionBanner>
         <BannerSlider items={banners} />
       </S.SectionBanner>
@@ -58,13 +55,7 @@ const Home = ({
     </S.SectionUpcoming>
 
     <Showcase title="Free games" highlight={freeHighligth} games={freeGames} />
-
-    <S.SectionFooter>
-      <Container>
-        <Footer />
-      </Container>
-    </S.SectionFooter>
-  </Fragment>
+  </Base>
 )
 
 export default Home
