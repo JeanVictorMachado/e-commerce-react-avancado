@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Head from 'next/head'
 import { AppProps } from 'next/app'
+import NextNprogress from 'nextjs-progressbar'
 
 import { ApolloProvider } from '@apollo/client'
 import { CartProvider } from 'hooks/use-cart'
@@ -28,6 +29,12 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
             />
           </Head>
           <GlobalStyles />
+          <NextNprogress
+            color="#F231A5"
+            startPosition={0.3}
+            stopDelayMs={200}
+            height={5}
+          />
           <AnyComponent {...pageProps} />
         </CartProvider>
       </ThemeProvider>
