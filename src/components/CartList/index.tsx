@@ -12,22 +12,32 @@ export type CartListProps = {
 }
 
 const CartList = ({ hasButton = false }: CartListProps) => {
-  const { items, total } = useCart()
+  const { items, total, loading } = useCart()
+
+  if (loading) {
+    return (
+      <S.Loading>
+        <></>
+      </S.Loading>
+    )
+  }
 
   return (
-    <S.Wrapper isEmpty={!items.length}>
+    <S.Wrapper isEmpty={!items.length} data-cy="cart-list">
       {items.length ? (
         <>
-          {items.map((item) => (
-            <GameItem key={item.title} {...item} />
-          ))}
+          <S.GamesList>
+            {items.map((item) => (
+              <GameItem key={item.title} {...item} />
+            ))}
+          </S.GamesList>
 
           <S.Footer>
             {!hasButton && <span>Total:</span>}
             <S.Total>{total}</S.Total>
 
             {hasButton && (
-              <Link href="/cart">
+              <Link href="/cart" passHref>
                 <Button as="a">Buy it now</Button>
               </Link>
             )}

@@ -6,7 +6,6 @@ import GamesTemplate, { GamesTemplateProps } from 'screens/Games'
 import { QUERY_GAMES } from 'graphql/queries/games'
 import { QueryGames, QueryGamesVariables } from 'graphql/generated/QueryGames'
 
-import filterItemsMock from 'components/ExploreSidebar/mock'
 import { parseQueryStringToWhere } from 'utils/filter'
 
 export default function GamesPage(props: GamesTemplateProps) {

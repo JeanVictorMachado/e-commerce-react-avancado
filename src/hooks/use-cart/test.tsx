@@ -10,7 +10,6 @@ describe('useCart', () => {
   beforeEach(() => {
     window.localStorage.clear()
   })
-
   it('should return items and its info if there are any in the cart', async () => {
     const wrapper = ({ children }: CartProviderProps) => (
       <MockedProvider mocks={[gamesMock]}>

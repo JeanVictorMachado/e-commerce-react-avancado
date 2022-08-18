@@ -17,16 +17,18 @@ const Showcase = ({
   highlight,
   games,
   color = 'white'
-}: ShowcaseProps) => (
-  <S.Wrapper>
-    {!!title && (
-      <Heading lineLeft lineColor="secondary">
-        {title}
-      </Heading>
-    )}
-    {!!highlight && <Highlight {...highlight} />}
-    {!!games && <GameCardSlider items={games} color={color} />}
-  </S.Wrapper>
-)
+}: ShowcaseProps) => {
+  return (
+    <S.Wrapper>
+      {!!title && (
+        <Heading lineLeft lineColor="secondary">
+          {title}
+        </Heading>
+      )}
+      {!!highlight && <Highlight {...highlight} />}
+      {!!games && <GameCardSlider items={games} color={color} />}
+    </S.Wrapper>
+  )
+}
 
 export default Showcase

@@ -1,11 +1,12 @@
-import { useContext, createContext, useState, useEffect } from 'react'
 import { useQueryGames } from 'graphql/queries/games'
-
+import { useContext, createContext, useState, useEffect } from 'react'
+import formatPrice from 'utils/format-price'
 import { getStorageItem, setStorageItem } from 'utils/localStorage'
 import { cartMapper } from 'utils/mappers'
-import formatPrice from 'utils/format-price'
 
-type CartItem = {
+const CART_KEY = 'cartItems'
+
+export type CartItem = {
   id: string
   img: string
   title: string
@@ -23,9 +24,7 @@ export type CartContextData = {
   loading: boolean
 }
 
-const CART_KEY = 'cartItems'
-
-export const CartContextDefaultValues: CartContextData = {
+export const CartContextDefaultValues = {
   items: [],
   quantity: 0,
   total: '$0.00',

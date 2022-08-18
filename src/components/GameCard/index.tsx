@@ -5,9 +5,9 @@ import formatPrice from 'utils/format-price'
 import { Favorite, FavoriteBorder } from '@styled-icons/material-outlined'
 
 import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon'
+import CartButton from 'components/CartButton'
 
 import * as S from './styles'
-import CartButton from 'components/CartButton'
 
 export type GameCardProps = {
   id: string
