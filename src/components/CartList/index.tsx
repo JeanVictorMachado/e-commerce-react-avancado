@@ -4,6 +4,7 @@ import { useCart } from 'hooks/use-cart'
 import Button from 'components/Button'
 import GameItem from 'components/GameItem'
 import Empty from 'components/Empty'
+import Loader from 'components/Loader'
 
 import * as S from './styles'
 
@@ -17,7 +18,7 @@ const CartList = ({ hasButton = false }: CartListProps) => {
   if (loading) {
     return (
       <S.Loading>
-        <></>
+        <Loader />
       </S.Loading>
     )
   }
